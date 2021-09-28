@@ -12,8 +12,8 @@ import java.util.function.DoubleSupplier;
 
 public class ArcadeDrive extends CommandBase {
   private final DriveTrainSubsystem m_drive;
-  private final double m_forward;
-  private final double m_rotation;
+  private final DoubleSupplier m_forward;
+  private final DoubleSupplier m_rotation;
 
   /**
    * 
@@ -27,8 +27,8 @@ public class ArcadeDrive extends CommandBase {
     // Use addRequirements() here to declare subsystem dependencies.
     m_drive = drive;
     
-    m_forward = forward.getAsDouble() > 1.0 ? 1.0 : forward.getAsDouble() < -1.0 ? -1.0 : forward.getAsDouble();
-    m_rotation = rotation.getAsDouble() > 1.0 ? 1.0 : rotation.getAsDouble() < -1.0 ? -1.0 : rotation.getAsDouble();
+    m_forward = forward ;//> 1.0 ? 1.0 : forward.getAsDouble() < -1.0 ? -1.0 : forward.getAsDouble();
+    m_rotation = rotation ;//> 1.0 ? 1.0 : rotation.getAsDouble() < -1.0 ? -1.0 : rotation.getAsDouble();
     addRequirements(m_drive);
   }
   // Called every time the scheduler runs while the command is scheduled.

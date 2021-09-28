@@ -4,6 +4,8 @@
 
 package frc.robot.subsystems;
 
+import java.util.function.DoubleSupplier;
+
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
@@ -25,7 +27,7 @@ public class DriveTrainSubsystem extends SubsystemBase {
   /* differential drive */
   public DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
 
-  public void arcadeDrive(Double speed, Double rotation){
+  public void arcadeDrive(DoubleSupplier speed, DoubleSupplier rotation){
     //clamp to between -1.0 and 1.0 for speed and rotation to prevent errors
     m_drive.arcadeDrive(speed, rotation);
   }
