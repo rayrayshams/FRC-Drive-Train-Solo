@@ -3,12 +3,12 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot;
-
+import edu.wpi.first.wpilibj.XboxController.Axis;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import frc.robot.commands.ArcadeDrive;
-import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.Trigger;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -29,7 +29,10 @@ public class RobotContainer {
     // Configure the button bindings
     configureButtonBindings();
     m_drive.setDefaultCommand(
-      new ArcadeDrive(m_drive, () -> m_controller.getY(Hand.kLeft), () -> m_controller.getX(Hand.kRight)));
+      new ArcadeDrive(m_drive, () -> m_controller.getY(Hand.kLeft), () -> m_controller.getX(Hand.kRight), () ->m_controller.getTriggerAxis(Hand.kLeft))
+      //new Trigger(() ->m_controller.getTriggerAxis(Hand.kLeft))
+      
+      );
   }
 
   /**
