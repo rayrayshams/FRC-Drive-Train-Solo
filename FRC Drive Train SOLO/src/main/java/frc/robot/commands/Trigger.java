@@ -22,7 +22,7 @@ public class Trigger extends CommandBase {
   /** Creates a new ArcadeDrive. */
   public Trigger(DoubleSupplier trigger) {
     // Use addRequirements() here to declare subsystem dependencies.
-    yaddaYadda = trigger;
+    addRequirements(trigger);
   }
   // Called every time the scheduler runs while the command is scheduled.
   @Override
