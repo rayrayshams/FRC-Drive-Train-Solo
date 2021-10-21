@@ -19,5 +19,8 @@ public final class Constants {
         public final static int rightFront = 23;
         public final static int rightBack = 15;
     }
-    
-}
+    public static class Shooter {
+        public static final double kP = 0.004;
+        public static final double kI = 0;
+        public static final double kD = 0;
+    }

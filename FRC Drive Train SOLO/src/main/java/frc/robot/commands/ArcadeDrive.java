@@ -10,33 +10,33 @@ import frc.robot.subsystems.DriveTrainSubsystem;
 import java.util.function.DoubleSupplier;
 
 
-public class ArcadeDrive extends CommandBase {
-  private final DriveTrainSubsystem m_drive;
-  private final DoubleSupplier m_forward;
-  private final DoubleSupplier m_rotation;
-  private final DoubleSupplier mtrigger;
-  /**
-   * 
-   * @param drive
-   * @param forward
-   * @param rotation
-   * @param mtrigger
-   */
+// public class ArcadeDrive extends CommandBase {
+//   private final DriveTrainSubsystem m_drive;
+//   private final DoubleSupplier m_forward;
+//   private final DoubleSupplier m_rotation;
+//   private final DoubleSupplier mtrigger;
+//   /**
+//    * 
+//    * @param drive
+//    * @param forward
+//    * @param rotation
+//    * @param mtrigger
+//    */
 
-  /** Creates a new ArcadeDrive. */
-  public ArcadeDrive(DriveTrainSubsystem drive, DoubleSupplier forward, DoubleSupplier rotation, DoubleSupplier trigger) {
-    // Use addRequirements() here to declare subsystem dependencies.
-    m_drive = drive;
-    mtrigger = trigger;
-    m_forward = forward ;//> 1.0 ? 1.0 : forward.getAsDouble() < -1.0 ? -1.0 : forward.getAsDouble();
-    m_rotation = rotation ;//> 1.0 ? 1.0 : rotation.getAsDouble() < -1.0 ? -1.0 : rotation.getAsDouble();
-    addRequirements(m_drive);
-  }
-  // Called every time the scheduler runs while the command is scheduled.
-  @Override
-  public void execute() {
-    if (mtrigger.getAsDouble() != 0.0){
-      m_drive.arcadeDrive(m_forward.getAsDouble(), -m_rotation.getAsDouble());
-    }
-  }
-}
+//   /** Creates a new ArcadeDrive. */
+//   public ArcadeDrive(DriveTrainSubsystem drive, DoubleSupplier forward, DoubleSupplier rotation, DoubleSupplier trigger) {
+//     // Use addRequirements() here to declare subsystem dependencies.
+//     m_drive = drive;
+//     mtrigger = trigger;
+//     m_forward = forward ;//> 1.0 ? 1.0 : forward.getAsDouble() < -1.0 ? -1.0 : forward.getAsDouble();
+//     m_rotation = rotation ;//> 1.0 ? 1.0 : rotation.getAsDouble() < -1.0 ? -1.0 : rotation.getAsDouble();
+//     addRequirements(m_drive);
+//   }
+//   // Called every time the scheduler runs while the command is scheduled.
+//   @Override
+//   public void execute() {
+//     if (mtrigger.getAsDouble() != 0.0){
+//       m_drive.arcadeDrive(m_forward.getAsDouble(), -m_rotation.getAsDouble());
+//     }
+//   }
+// }
