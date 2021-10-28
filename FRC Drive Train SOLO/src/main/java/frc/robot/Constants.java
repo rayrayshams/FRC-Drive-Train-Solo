@@ -28,6 +28,5 @@ public final class Constants {
         public static final int kMaxOutput = 1;
         public static final int kMinOutput = -1;
         public static final int maxRPM = 5700;
-        public static final int setPoint = 0;
     }
 }
