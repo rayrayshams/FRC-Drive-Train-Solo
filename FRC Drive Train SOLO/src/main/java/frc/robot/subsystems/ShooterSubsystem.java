@@ -5,8 +5,12 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.controller.PIDController;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import com.revrobotics.CANEncoder;
@@ -21,9 +25,6 @@ public class ShooterSubsystem extends SubsystemBase {
   private CANPIDController m_controller;
 
   private PIDController m_pidController;
-
-  private WPI_TalonSRX m_belt_f = new WPI_TalonSRX(Constants.CAN.shooter_belt_front);
-  private VictorSPX m_belt_b = new VictorSPX(Constants.CAN.shooter_belt_back);
 
   private NetworkTable m_table = NetworkTableInstance.getDefault().getTable("limelight");
   public NetworkTableEntry ta = m_table.getEntry("ta");
