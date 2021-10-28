@@ -37,6 +37,8 @@ public class Shooter {
   private CANEncoder m_encoder;
   public double kP, kI, kD, kIz, kFF, kMaxOutput, kMinOutput, maxRPM;
 
+public Shooter(){
+
   m_pidController.setP(kP);
   m_pidController.setI(kI);
   m_pidController.setD(kD);
