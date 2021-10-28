@@ -38,7 +38,6 @@ public class Shooter {
   public double kP, kI, kD, kIz, kFF, kMaxOutput, kMinOutput, maxRPM;
 
 public Shooter(){
-
   m_pidController.setP(kP);
   m_pidController.setI(kI);
   m_pidController.setD(kD);
@@ -47,8 +46,7 @@ public Shooter(){
   m_pidController.setOutputRange(kMinOutput, kMaxOutput);
 
   m_pidController.setReference(setPoint, ControlType.kVelocity);
-  
-
   }
+  
 }
 
