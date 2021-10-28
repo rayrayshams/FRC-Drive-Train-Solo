@@ -45,9 +45,11 @@ public Shooter(){
   m_pidController.setIZone(kIz);
   m_pidController.setFF(kFF);
   m_pidController.setOutputRange(kMinOutput, kMaxOutput);
-
-  m_pidController.setReference(setPoint, ControlType.kVelocity);
   
+  double setPoint = m_stick.getY()*maxRPM;
+  m_pidController.setReference(setPoint, ControlType.kVelocity);
+  SmartDashboard.putNumber("SetPoint", setPoint);
+  SmartDashboard.putNumber("ProcessVariable", m_encoder.getVelocity());
 
   }
 }
