@@ -36,7 +36,6 @@ public class Shooter {
   private CANPIDController m_pidController;
   private CANEncoder m_encoder;
   public double kP, kI, kD, kIz, kFF, kMaxOutput, kMinOutput, maxRPM;
-  m_motor.restoreFactoryDefaults();
 
   m_pidController.setP(kP);
   m_pidController.setI(kI);
