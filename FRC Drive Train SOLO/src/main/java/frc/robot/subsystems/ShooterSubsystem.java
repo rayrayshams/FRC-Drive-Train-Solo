@@ -29,7 +29,7 @@ public class ShooterSubsystem extends SubsystemBase {
   private NetworkTable m_table = NetworkTableInstance.getDefault().getTable("limelight");
   public NetworkTableEntry ta = m_table.getEntry("ta");
 
-public class Robot extends TimedRobot {
+public class Shooter {
   private Joystick m_stick;
   private static final int deviceID = 1;
   private CANSparkMax m_motor;
