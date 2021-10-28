@@ -21,7 +21,13 @@ public final class Constants {
     }
     public static class Shooter {
         public static final double kP = 0.004;
-        public static final double kI = 0;
-        public static final double kD = 0;
+        public static final int kI = 0;
+        public static final int kD = 0;
+        public static final int kIz = 0;
+        public static final double kFF = 0.000015;
+        public static final int kMaxOutput = 1;
+        public static final int kMinOutput = -1;
+        public static final int maxRPM = 5700;
+        
     }
 }
