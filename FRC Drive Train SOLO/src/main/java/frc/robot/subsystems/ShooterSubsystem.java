@@ -51,5 +51,23 @@ public Shooter(){
   SmartDashboard.putNumber("ProcessVariable", m_encoder.getVelocity());
 }
   }
+ /**
+   * Set Position of Shooter
+   * 
+   * @param velocity The desired velocity of the shooter
+   */
+  public void set(double current, double target) {
+    m_shooterMotor.set(m_pidController.calculate(current, target) * 0.004);
+    System.out.println(m_pidController.calculate(current, target) * 0.004);
+  }
+
+  /**
+   * Stop Shooter
+   */
+  public void stop() {
+    m_controller.setReference(0, ControlType.kDutyCycle);
+    m_shooterMotor.stopMotor();
+  }
+
 }
 
