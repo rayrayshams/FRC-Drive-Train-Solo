@@ -29,7 +29,11 @@ public class ArcadeDrive extends CommandBase {
     m_rotation = rotation ;//> 1.0 ? 1.0 : rotation.getAsDouble() < -1.0 ? -1.0 : rotation.getAsDouble();
     addRequirements(m_drive);
   }
-  // Called every time the scheduler runs while the command is scheduled.
+  //public ArcadeDrive(DriveTrainSubsystem m_drive2, DoubleSupplier doubleSupplier, DoubleSupplier doubleSupplier2,
+	//	Object object) {
+  //    
+  //  }
+// Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
       m_drive.arcadeDrive(m_forward.getAsDouble(), -m_rotation.getAsDouble());
