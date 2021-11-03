@@ -35,17 +35,14 @@ public class RobotContainer {
   /**
    * The container for the robot. Contains subsystems, OI devices, and commands.
    */
-
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
-    m_drive.setDefaultCommand(
-      new ArcadeDrive(m_drive,
-      () -> m_controller.getY(Hand.kLeft),
-      () -> m_controller.getX(Hand.kRight), 
-      () -> m_controller.getTriggerAxis(Hand.kLeft))
+    m_drive.setDefaultCommand(new ArcadeDrive(m_drive, () -> m_controller.getY(Hand.kLeft),
+        () -> m_controller.getX(Hand.kRight), () -> m_controller.getTriggerAxis(Hand.kLeft))
+
     );
-    
+
   }
 
   /**
