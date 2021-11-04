@@ -5,12 +5,12 @@ import java.util.function.DoubleSupplier;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.*;
 
-public class Shoot extends CommandBase {
+public class ShootStop extends CommandBase {
     @SuppressWarnings({ "PMD.UnusedPrivateField", "PMD.SingularField" })
     private final Shooter m_shooter;
-    private final DoubleSupplier m_controllerInput;
+    //private final DoubleSupplier m_controllerInput;
 
-    public Shoot(Shooter shooter) {
+    public ShootStop(Shooter shooter) {
         m_shooter = shooter;
         addRequirements(shooter);
     }

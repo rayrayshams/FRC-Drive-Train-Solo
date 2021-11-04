@@ -32,7 +32,7 @@ public class ShooterSubsystem extends SubsystemBase {
 
 public class Shooter {
   private Joystick m_stick;
-  private static final int deviceID = 1;
+  //private static final int deviceID = 1;
   private CANSparkMax m_motor;
   private CANPIDController m_controller;
   private PIDController m_pidController;

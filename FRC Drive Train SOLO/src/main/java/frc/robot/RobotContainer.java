@@ -14,7 +14,8 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import frc.robot.commands.ArcadeDrive;
-import frc.robot.commands.Trigger;
+import frc.robot.commands.Shoot;
+import frc.robot.commands.ShootStop;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
@@ -48,6 +49,7 @@ public class RobotContainer {
     );
 
   }
+  
 
   /**
    * Use this method to define your button->command mappings. Buttons can be
@@ -55,10 +57,10 @@ public class RobotContainer {
    * ({@link edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then
    * passing it to a {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
+
   private void configureButtonBindings() {
-    new Trigger(() -> m_controller.getTriggerAxis(Hand.kLeft));
-    new JoystickButton(m_controller, Button.kA.value).whenPressed(new Shoot(m_shooter))
-        .whenReleased(new ShootStop(m_shooter));
+    new JoystickButton(m_controller, Button.kA.value).whenPressed(new Shoot(m_shooter), true)
+        .whenReleased(new ShootStop(m_shooter), true);
   }
 
   /**
