@@ -27,13 +27,12 @@ public class DriveTrainSubsystem extends SubsystemBase {
   /* differential drive */
   public DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
 
-  public void arcadeDrive(double speed, double rotation){
-    //clamp to between -1.0 and 1.0 for speed and rotation to prevent errors
-    m_drive.arcadeDrive(speed, rotation);
+  /** Creates a new DriveTrain. jaden helpppppppppppp*/
+  public DriveTrainSubsystem() {
   }
-  
-  /** Creates a new DriveTrain. */
-  public DriveTrainSubsystem() {}
+  public void arcadeDrive(double speed, double rotation){
+    m_drive.arcadeDrive(speed, -rotation);
+  }
 
   @Override
   public void periodic() {
